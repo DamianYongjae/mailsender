@@ -109,7 +109,6 @@ export default () => {
           "Access-Control-Allow-Headers":
             "Origin, X-Requested-With, Content-Type, Accept",
         },
-        mode: "cors",
       }).catch((err) => {
         console.log(`error: ${err}`);
       });
