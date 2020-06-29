@@ -10,13 +10,16 @@ const Container = styled.div`
   align-item: center;
 `;
 
-const Contents = styled.div``;
+const Contents = styled.div`
+  height: 200px;
+`;
 
 export default () => {
   return (
     <Container>
       <Contents>
-        제출하셨습니다. 연수가 끝난 후에 메일로 받으시겠습니다.
+        <h1>제출하셨습니다. 연수가 끝난 후에 메일로 받으시겠습니다.</h1>
+        <h2>창을 닫아주세요.</h2>
       </Contents>
     </Container>
   );
