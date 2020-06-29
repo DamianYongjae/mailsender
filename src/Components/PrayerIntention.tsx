@@ -93,27 +93,27 @@ export default () => {
     return re.test(String(email).toLowerCase());
   }
 
-  const handleClick = async (email: string, intention: string) => {
-    if (email === "" || intention === "") {
-      alert("모든 항목을 입력해주세요");
-    } else if (!validateEmail(email)) {
-      alert("이메일 주소를 정확히 입력해주세요.");
-    } else {
-      await axios.post(`https://mailsender-api.vercel.app/sendmail`, {
-        email,
-        intention,
-      }, {
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Headers":
-            "Origin, X-Requested-With, Content-Type, Accept",
-        },
-      }).catch((err) => {
-        console.log(`error: ${err}`);
-      });
-    }
-  };
+  // const handleClick = async (email: string, intention: string) => {
+  //   if (email === "" || intention === "") {
+  //     alert("모든 항목을 입력해주세요");
+  //   } else if (!validateEmail(email)) {
+  //     alert("이메일 주소를 정확히 입력해주세요.");
+  //   } else {
+  //     await axios.post(`https://mailsender-api.vercel.app/sendmail`, {
+  //       email,
+  //       intention,
+  //     }, {
+  //       headers: {
+  //         "Content-Type": "application/json;charset=UTF-8",
+  //         "Access-Control-Allow-Origin": "*",
+  //         "Access-Control-Allow-Headers":
+  //           "Origin, X-Requested-With, Content-Type, Accept",
+  //       },
+  //     }).catch((err) => {
+  //       console.log(`error: ${err}`);
+  //     });
+  //   }
+  // };
 
   const handleSubmit = async (email: string, intention: string) => {
     if (email === "" || intention === "") {
