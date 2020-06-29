@@ -102,6 +102,10 @@ export default () => {
       await axios.post(`https://mailsender-api.vercel.app/sendmail`, {
         email,
         intention,
+      }, {
+        headers: {
+          mode: "cors",
+        },
       }).catch((err) => {
         console.log(`error: ${err}`);
       });
