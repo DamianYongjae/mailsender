@@ -99,7 +99,7 @@ export default () => {
     } else if (!validateEmail(email)) {
       alert("이메일 주소를 정확히 입력해주세요.");
     } else {
-      await axios.post(`https://mailsender-api.vercel.app//sendmail`, {
+      await axios.post(`https://mailsender-api.vercel.app/sendmail`, {
         email,
         intention,
       }).catch((err) => {
