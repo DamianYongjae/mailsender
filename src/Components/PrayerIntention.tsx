@@ -99,7 +99,7 @@ export default () => {
     } else if (!validateEmail(email)) {
       alert("이메일 주소를 정확히 입력해주세요.");
     } else {
-      await axios.post(`http://localhost:4000/sendmail`, {
+      await axios.post(`https://reverent-johnson-8853fa.netlify.app/sendmail`, {
         email,
         intention,
       }).then((response) => {
