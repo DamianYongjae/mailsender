@@ -102,7 +102,6 @@ export default () => {
       await axios.post(`https://reverent-johnson-8853fa.netlify.app/sendmail`, {
         email,
         intention,
-        mode: "cors",
       }).catch((err) => {
         console.log(`error: ${err}`);
       });
