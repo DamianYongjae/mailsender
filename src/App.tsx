@@ -1,9 +1,14 @@
 import React from "react";
+import { HashRouter as Router } from "react-router-dom";
+import Routes from "./Routes";
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Router>
+      <>
+        <Routes />
+      </>
+    </Router>
   );
 }
 
