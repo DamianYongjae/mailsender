@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, BrowserRouter, HashRouter } from "react-router-dom";
+import { Route, Switch, HashRouter } from "react-router-dom";
 
 import Home from "./Components/Home";
 import PrayerIntention from "./Components/PrayerIntention";
