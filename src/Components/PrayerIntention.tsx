@@ -115,6 +115,26 @@ export default () => {
     }
   };
 
+  const handleSubmit = async (email: string, intention: string) => {
+    if (email === "" || intention === "") {
+      alert("모든 항목을 입력해주세요");
+    } else if (!validateEmail(email)) {
+      alert("이메일 주소를 정확히 입력해주세요.");
+    } else {
+      return fetch(`https://mailsender-api.vercel.app/sendmail`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "cors",
+      }).then((res) => {
+        return res;
+      }).catch((err) => {
+        console.log(`erro: ${err}`);
+      });
+    }
+  };
+
   return (
     <Container>
       <Title>연수 지향</Title>
@@ -146,7 +166,7 @@ export default () => {
       <ButtonContainer>
         <SendButton
           onClick={() => {
-            handleClick(email.value, intention.value);
+            handleSubmit(email.value, intention.value);
             history.push("/complete");
           }}
         >
