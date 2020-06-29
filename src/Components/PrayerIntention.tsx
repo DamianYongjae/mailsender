@@ -104,7 +104,11 @@ export default () => {
         intention,
       }, {
         headers: {
-          mode: "cors",
+          "Content-Type": "application/json;charset=UTF-8",
+          "Access-Control-Allow-Origin": "*",
+          "mode": "cors",
+          "Access-Control-Allow-Headers":
+            "Origin, X-Requested-With, Content-Type, Accept",
         },
       }).catch((err) => {
         console.log(`error: ${err}`);
