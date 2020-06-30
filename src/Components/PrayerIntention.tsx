@@ -125,11 +125,13 @@ export default () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers":
+            "Origin, X-Requested-With, Content-Type, Accept",
+          "Access-Control-Allow-Credentials": "true",
         },
         mode: "cors",
-      }).then((res) => {
-        return res;
-      }).catch((err) => {
+      }).then((res) => {}).catch((err) => {
         console.log(`erro: ${err}`);
       });
     }
