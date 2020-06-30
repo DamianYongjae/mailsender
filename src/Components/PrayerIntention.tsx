@@ -99,13 +99,13 @@ export default () => {
   }
 
   const fetchPost = async ({ endpoint, data } : any) => {
+    console.log(before fetch);
     return fetch(`https://mailsender-api.vercel.app/${endpoint}`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json"
       },
-      credentials: 'include',
       mode: "cors",
     }).then((res) => {
       return res;
@@ -148,6 +148,7 @@ export default () => {
           intention
         }
       }
+      console.log("outside fetchPOst")
       const res = await fetchPost(fetchOption);
 
       if(res.ok){
