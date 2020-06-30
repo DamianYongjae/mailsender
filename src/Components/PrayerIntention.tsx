@@ -99,7 +99,7 @@ export default () => {
   }
 
   const fetchPost = async ({ endpoint, data } : any) => {
-    return fetch(`http://localhost:4000/${endpoint}`, {
+    return fetch(`https://mailsender-api.vercel.app/${endpoint}`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
