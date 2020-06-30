@@ -125,7 +125,7 @@ export default () => {
         method: "POST",
         body: JSON.stringify({ email, intention }),
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json, application/x-www-form-urlencoded",
         },
         mode: "cors",
       }).then((res) => console.log(res));
