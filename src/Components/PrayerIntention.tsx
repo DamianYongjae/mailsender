@@ -102,17 +102,10 @@ export default () => {
       await axios.post(`https://mailsender-api.vercel.app/sendmail`, {
         email,
         intention,
-      }, {
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Headers":
-            "Origin, X-Requested-With, Content-Type, Accept",
-        },
-      }).catch((err) => {
-        console.log(`error: ${err}`);
-      });
-      history.push("/complete");
+      }).then((resp) => resp.json()).then((data) => history.push("/complete"))
+        .catch((err) => {
+          console.log(`error: ${err}`);
+        });
     }
   };
 
