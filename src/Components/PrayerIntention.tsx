@@ -123,7 +123,7 @@ export default () => {
     } else {
       await fetch(`https://mailsender-api.vercel.app/sendmail`, {
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify({ email, intention }),
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
