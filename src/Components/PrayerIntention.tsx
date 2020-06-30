@@ -122,6 +122,7 @@ export default () => {
       alert("이메일 주소를 정확히 입력해주세요.");
     } else {
       await fetch(`https://mailsender-api.vercel.app/sendmail`, {
+        method: "GET",
         body: JSON.stringify({ email, intention }),
         headers: {
           "Content-Type": "application/json",
