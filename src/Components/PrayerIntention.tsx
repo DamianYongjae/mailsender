@@ -104,6 +104,7 @@ export default () => {
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer token`,
       },
       mode: "cors",
     }).then((res) => {
