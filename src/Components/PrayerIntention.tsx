@@ -1,5 +1,5 @@
 import React from "react";
-// import axios from "axios";
+import axios from "axios";
 
 import styled from "styled-components";
 import { EmailInput } from "../Util/Input";
@@ -93,45 +93,45 @@ export default () => {
     return re.test(String(email).toLowerCase());
   }
 
-  // const handleClick = async (email: string, intention: string) => {
-  //   if (email === "" || intention === "") {
-  //     alert("모든 항목을 입력해주세요");
-  //   } else if (!validateEmail(email)) {
-  //     alert("이메일 주소를 정확히 입력해주세요.");
-  //   } else {
-  //     await axios.post(`https://mailsender-api.vercel.app/sendmail`, {
-  //       email,
-  //       intention,
-  //     }, {
-  //       headers: {
-  //         "Content-Type": "application/json;charset=UTF-8",
-  //         "Access-Control-Allow-Origin": "*",
-  //         "Access-Control-Allow-Headers":
-  //           "Origin, X-Requested-With, Content-Type, Accept",
-  //       },
-  //     }).catch((err) => {
-  //       console.log(`error: ${err}`);
-  //     });
-  //   }
-  // };
-
-  const handleSubmit = async (email: string, intention: string) => {
+  const handleClick = async (email: string, intention: string) => {
     if (email === "" || intention === "") {
       alert("모든 항목을 입력해주세요");
     } else if (!validateEmail(email)) {
       alert("이메일 주소를 정확히 입력해주세요.");
     } else {
-      await fetch(`https://mailsender-api.vercel.app/sendmail`, {
-        method: "POST",
-        body: JSON.stringify({ email, intention }),
+      await axios.post(`https://mailsender-api.vercel.app/sendmail`, {
+        email,
+        intention,
+      }, {
         headers: {
-          "Content-Type": "application/json, application/x-www-form-urlencoded",
+          "Content-Type": "application/json;charset=UTF-8",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers":
+            "Origin, X-Requested-With, Content-Type, Accept",
         },
-        mode: "cors",
-      }).then((res) => console.log(res));
-      history.push("/complete");
+      }).catch((err) => {
+        console.log(`error: ${err}`);
+      });
     }
   };
+
+  // const handleSubmit = async (email: string, intention: string) => {
+  //   if (email === "" || intention === "") {
+  //     alert("모든 항목을 입력해주세요");
+  //   } else if (!validateEmail(email)) {
+  //     alert("이메일 주소를 정확히 입력해주세요.");
+  //   } else {
+  //     await fetch(`https://mailsender-api.vercel.app/sendmail`, {
+  //       method: "POST",
+  //       body: JSON.stringify({ email, intention }),
+  //       headers: {
+  //         "Content-Type": "application/json, application/x-www-form-urlencoded",
+  //       },
+  //       mode: "cors",
+  //     }).then((res) => console.log(res));
+  //     history.push("/complete");
+  //   }
+  // };
 
   return (
     <Container>
@@ -164,7 +164,7 @@ export default () => {
       <ButtonContainer>
         <SendButton
           onClick={() => {
-            handleSubmit(email.value, intention.value);
+            handleClick(email.value, intention.value);
           }}
         >
           전송
