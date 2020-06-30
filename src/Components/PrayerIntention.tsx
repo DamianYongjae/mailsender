@@ -132,7 +132,6 @@ export default () => {
         },
         mode: "cors",
       }).then((res) => {}).catch((err) => {
-        console.log(`erro: ${err}`);
       });
     }
   };
