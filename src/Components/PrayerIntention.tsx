@@ -123,6 +123,7 @@ export default () => {
     } else {
       await fetch(`https://mailsender-api.vercel.app/sendmail`, {
         method: "POST",
+        body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
@@ -131,8 +132,8 @@ export default () => {
           "Access-Control-Allow-Credentials": "true",
         },
         mode: "cors",
-      }).then((res) => {}).catch((err) => {
       });
+      history.push("/complete");
     }
   };
 
@@ -168,7 +169,6 @@ export default () => {
         <SendButton
           onClick={() => {
             handleSubmit(email.value, intention.value);
-            history.push("/complete");
           }}
         >
           전송
