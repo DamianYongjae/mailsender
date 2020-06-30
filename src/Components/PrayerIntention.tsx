@@ -105,8 +105,6 @@ export default () => {
         intention,
       }).then((res) => {
         history.push("/complete");
-      }).catch((err) => {
-        console.log(`error: ${err}`);
       });
     }
   };
