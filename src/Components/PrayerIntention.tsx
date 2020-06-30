@@ -102,7 +102,10 @@ export default () => {
       await axios.post(`https://mailsender-api.vercel.app/sendmail`, {
         email,
         intention,
-      }).then((resp) => resp.json()).then((data) => history.push("/complete"))
+      }).then((resp) => {
+        console.log(resp);
+        history.push("/complete");
+      })
         .catch((err) => {
           console.log(`error: ${err}`);
         });
