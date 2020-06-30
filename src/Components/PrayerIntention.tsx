@@ -99,7 +99,7 @@ export default () => {
   }
 
   const fetchPost = async ({ endpoint, data } : any) => {
-    console.log("before fetch");
+    console.log("before fetch inside fetchpost");
     return fetch(`https://mailsender-api.vercel.app/${endpoint}`, {
       method: "POST",
       body: JSON.stringify(data),
