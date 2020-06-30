@@ -127,8 +127,8 @@ export default () => {
         headers: {
           "Content-Type": "application/json",
         },
-        // mode: "cors",
-      });
+        mode: "cors",
+      }).then((res) => console.log(res));
       history.push("/complete");
     }
   };
