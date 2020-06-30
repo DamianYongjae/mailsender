@@ -106,6 +106,7 @@ export default () => {
         "Content-Type": "application/json",
         Authorization: `Bearer token`,
       },
+      credentials: 'include',
       mode: "cors",
     }).then((res) => {
       return res;
