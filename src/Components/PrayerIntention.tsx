@@ -93,9 +93,23 @@ export default () => {
   const intention = useInput("");
 
   function validateEmail(email: string) {
-    const re = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re =
+      /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
+
+  const fetchPost = async ({ endpoint, data } : any) => {
+    return fetch(`http://localhost:4000/${endpoint}`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+    }).then((res) => {
+      return res;
+    });
+  };
 
   // const mailSend = (address: string, subject: string, content:string) => {
   //   let date = Math.round(new Date("June 29, 2020 12:37:00").getTime() / 1000);
@@ -126,18 +140,33 @@ export default () => {
     } else if (!validateEmail(email)) {
       alert("이메일 주소를 정확히 입력해주세요.");
     } else {
-      await axios
-        .post(`https://mailsender-api.vercel.app/sendmail`, {
+      const fetchOption = {
+        endpoint: `sendmail`,
+        data: {
           email,
-          intention,
-        })
-        .then((res) => {
-          history.push("/complete");
-        })
-        .catch((error) => {
-          console.log(error);
-          alert("something went wrong");
-        });
+          intention
+        }
+      }
+      const res = await fetchPost(fetchOption);
+
+      if(res.ok){
+        console.log("ok!");
+        
+      }
+      history.push("/complete");
+      // await axios;
+      // .post(`https://mailsender-api.vercel.app/sendmail`, {
+      // .post(`http://localhost:4000/sendmail`, {
+      //   email,
+      //   intention,
+      // })
+      // .then((res) => {
+      //   history.push("/complete");
+      // })
+      // .catch((error) => {
+      //   console.log(error);
+      //   alert("something went wrong");
+      // });
       // mailSend(email, "26차 요한연수 지향", intention);
     }
   };
@@ -164,9 +193,8 @@ export default () => {
     <Container>
       <Title>연수 지향</Title>
       <Instruction>
-        요한 연수에 임하면서 주님께 청하는 지향을 입력하세요. 전송버튼은 정해진
-        시간에 눌러주세요. 연수 후에 E-mail로 받으시게 되는데 못 받으신 분들은
-        Spam메일을 확인해 주세요.
+        요한 연수에 임하면서 주님께 청하는 지향을 입력하세요. 전송버튼은 정해진 시간에 눌러주세요. 연수 후에 E-mail로 받으시게
+        되는데 못 받으신 분들은 Spam메일을 확인해 주세요.
       </Instruction>
       <EmailContainer>
         <Label>Email:</Label>
@@ -176,7 +204,8 @@ export default () => {
           value={email.value}
           onChange={email.onChange}
           type="email"
-        ></EmailInput>
+        >
+        </EmailInput>
       </EmailContainer>
       <IntentionContainer>
         <Label>지향:</Label>
@@ -185,7 +214,8 @@ export default () => {
           required={true}
           value={intention.value}
           onChange={intention.onChange}
-        ></IntentionInput>
+        >
+        </IntentionInput>
       </IntentionContainer>
       <ButtonContainer>
         <SendButton
