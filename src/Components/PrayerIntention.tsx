@@ -4,8 +4,12 @@ import axios from "axios";
 import styled from "styled-components";
 import { EmailInput } from "../Util/Input";
 import useInput from "../Hooks/useInput";
+import sgMail from "@sendgrid/mail";
 
 import { useHistory } from "react-router-dom";
+import "../.env";
+import dotenv from "dotenv";
+import mail from "@sendgrid/mail";
 
 const Container = styled.div`
   margin: auto;
@@ -83,15 +87,37 @@ const SendButton = styled.button`
 `;
 
 export default () => {
+  dotenv.config();
   const history = useHistory();
   const email = useInput("");
   const intention = useInput("");
 
   function validateEmail(email: string) {
-    const re =
-      /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
+
+  // const mailSend = (address: string, subject: string, content:string) => {
+  //   let date = Math.round(new Date("June 29, 2020 12:37:00").getTime() / 1000);
+  //   let tempDate = Math.round(new Date().getTime() / 1000);
+  //   const email = {
+  //     from: "CBLM@CBLM.com",
+  //     to: address,
+  //     subject: subject,
+  //     html: `기도 지향 내용: <p>${content}</p>`,
+  //     send_at: tempDate,
+  //   };
+  //   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  //   sgMail.send(email).then(
+  //     () => {},
+  //     (error) => {
+  //       console.log(error);
+  //       if (error.response) {
+  //         console.log(error.response.body);
+  //       }
+  //     }
+  //   );
+  // };
 
   const handleClick = async (email: string, intention: string) => {
     // const data = { email, intention };
@@ -100,12 +126,19 @@ export default () => {
     } else if (!validateEmail(email)) {
       alert("이메일 주소를 정확히 입력해주세요.");
     } else {
-      await axios.post(`https://mailsender-api.vercel.app/sendmail`, {
-        email,
-        intention,
-      }).then((res) => {
-        history.push("/complete");
-      }).catch((error) => console.log(error));
+      await axios
+        .post(`https://mailsender-api.vercel.app/sendmail`, {
+          email,
+          intention,
+        })
+        .then((res) => {
+          history.push("/complete");
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("something went wrong");
+        });
+      // mailSend(email, "26차 요한연수 지향", intention);
     }
   };
 
@@ -131,8 +164,9 @@ export default () => {
     <Container>
       <Title>연수 지향</Title>
       <Instruction>
-        요한 연수에 임하면서 주님께 청하는 지향을 입력하세요. 전송버튼은 정해진 시간에 눌러주세요. 연수 후에 E-mail로 받으시게
-        되는데 못 받으신 분들은 Spam메일을 확인해 주세요.
+        요한 연수에 임하면서 주님께 청하는 지향을 입력하세요. 전송버튼은 정해진
+        시간에 눌러주세요. 연수 후에 E-mail로 받으시게 되는데 못 받으신 분들은
+        Spam메일을 확인해 주세요.
       </Instruction>
       <EmailContainer>
         <Label>Email:</Label>
@@ -142,8 +176,7 @@ export default () => {
           value={email.value}
           onChange={email.onChange}
           type="email"
-        >
-        </EmailInput>
+        ></EmailInput>
       </EmailContainer>
       <IntentionContainer>
         <Label>지향:</Label>
@@ -152,8 +185,7 @@ export default () => {
           required={true}
           value={intention.value}
           onChange={intention.onChange}
-        >
-        </IntentionInput>
+        ></IntentionInput>
       </IntentionContainer>
       <ButtonContainer>
         <SendButton
