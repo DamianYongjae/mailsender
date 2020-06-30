@@ -122,14 +122,13 @@ export default () => {
       alert("이메일 주소를 정확히 입력해주세요.");
     } else {
       await fetch(`https://mailsender-api.vercel.app/sendmail`, {
-        method: "POST",
         body: JSON.stringify({ email, intention }),
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Headers":
-            "Origin, X-Requested-With, Content-Type, Accept,Access-Control-Allow-Origin",
-        },
+        // headers: {
+        //   "Content-Type": "application/json",
+        //   "Access-Control-Allow-Origin": "*",
+        //   "Access-Control-Allow-Headers":
+        //     "Origin, X-Requested-With, Content-Type, Accept,Access-Control-Allow-Origin",
+        // },
         mode: "cors",
       });
       history.push("/complete");
