@@ -121,7 +121,7 @@ export default () => {
     } else if (!validateEmail(email)) {
       alert("이메일 주소를 정확히 입력해주세요.");
     } else {
-      return fetch(`https://mailsender-api.vercel.app/sendmail`, {
+      await fetch(`https://mailsender-api.vercel.app/sendmail`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
