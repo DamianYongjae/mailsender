@@ -126,7 +126,7 @@ export default () => {
         body: JSON.stringify({ email, intention }),
         headers: {
           "Content-Type": "application/json, application/x-www-form-urlencoded",
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin": "https://mailsender-api.vercel.app/sendmail",
         },
         mode: "cors",
       }).then((res) => console.log(res));
