@@ -94,6 +94,7 @@ export default () => {
   }
 
   const handleClick = async (email: string, intention: string) => {
+    // const data = { email, intention };
     if (email === "" || intention === "") {
       alert("모든 항목을 입력해주세요");
     } else if (!validateEmail(email)) {
@@ -102,12 +103,11 @@ export default () => {
       await axios.post(`https://mailsender-api.vercel.app/sendmail`, {
         email,
         intention,
-      }).then(() => {
+      }).then((res) => {
         history.push("/complete");
-      })
-        .catch((err) => {
-          console.log(`error: ${err}`);
-        });
+      }).catch((err) => {
+        console.log(`error: ${err}`);
+      });
     }
   };
 
