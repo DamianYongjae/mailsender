@@ -142,7 +142,7 @@ export default () => {
       alert("이메일 주소를 정확히 입력해주세요.");
     } else {
       const fetchOption = {
-        endpoint: `sendmail`,
+        endpoint: `:sendmail`,
         data: {
           email,
           intention
