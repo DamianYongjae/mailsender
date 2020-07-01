@@ -4,12 +4,12 @@ import React from "react";
 import styled from "styled-components";
 import { EmailInput } from "../Util/Input";
 import useInput from "../Hooks/useInput";
-// import sgMail from "@sendgrid/mail";
+import sgMail from "@sendgrid/mail";
 
 import { useHistory } from "react-router-dom";
 // import "../.env";
 // import dotenv from "dotenv";
-import mail from "@sendgrid/mail";
+// import mail from "@sendgrid/mail";
 
 const Container = styled.div`
   margin: auto;
