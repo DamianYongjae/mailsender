@@ -9,7 +9,7 @@ import useInput from "../Hooks/useInput";
 import { useHistory } from "react-router-dom";
 // import "../.env";
 // import dotenv from "dotenv";
-// import mail from "@sendgrid/mail";
+import mail from "@sendgrid/mail";
 
 const Container = styled.div`
   margin: auto;
@@ -98,13 +98,13 @@ export default () => {
     return re.test(String(email).toLowerCase());
   }
 
-  const fetchPost = async ({ endpoint, data } : any) => {
+  const fetchPost = async ({ endpoint, data }: any) => {
     console.log("before fetch inside fetchpost");
-    return fetch(`https://mailsender-api.vercel.app/${endpoint}`, {
+    return fetch(`http://localhost:4000/${endpoint}`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       mode: "cors",
     }).then((res) => {
@@ -112,27 +112,27 @@ export default () => {
     });
   };
 
-  // const mailSend = (address: string, subject: string, content:string) => {
-  //   let date = Math.round(new Date("June 29, 2020 12:37:00").getTime() / 1000);
-  //   let tempDate = Math.round(new Date().getTime() / 1000);
-  //   const email = {
-  //     from: "CBLM@CBLM.com",
-  //     to: address,
-  //     subject: subject,
-  //     html: `기도 지향 내용: <p>${content}</p>`,
-  //     send_at: tempDate,
-  //   };
-  //   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-  //   sgMail.send(email).then(
-  //     () => {},
-  //     (error) => {
-  //       console.log(error);
-  //       if (error.response) {
-  //         console.log(error.response.body);
-  //       }
-  //     }
-  //   );
-  // };
+  const mailSend = (address: string, subject: string, content: string) => {
+    let date = Math.round(new Date("June 29, 2020 12:37:00").getTime() / 1000);
+    let tempDate = Math.round(new Date().getTime() / 1000);
+    const email = {
+      from: "CBLM@CBLM.com",
+      to: address,
+      subject: subject,
+      html: `기도 지향 내용: <p>${content}</p>`,
+      send_at: tempDate,
+    };
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    sgMail.send(email).then(
+      () => {},
+      (error) => {
+        console.log(error);
+        if (error.response) {
+          console.log(error.response.body);
+        }
+      },
+    );
+  };
 
   const handleClick = async (email: string, intention: string) => {
     // const data = { email, intention };
@@ -145,16 +145,17 @@ export default () => {
         endpoint: `sendmail`,
         data: {
           email,
-          intention
-        }
-      }
-      console.log("outside fetchPOst")
-      const res = await fetchPost(fetchOption);
+          intention,
+        },
+      };
+      console.log("outside fetchPOst");
+      // const res = await fetchPost(fetchOption);
 
-      if(res.ok){
-        console.log("ok!");
-        
-      }
+      // if(res.ok){
+      //   console.log("ok!");
+
+      // }
+      mailSend(email, "26차 요한 연수 지향", intention);
       history.push("/complete");
       // await axios;
       // .post(`https://mailsender-api.vercel.app/sendmail`, {
