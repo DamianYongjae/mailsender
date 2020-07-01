@@ -13,6 +13,9 @@ export const fetchPost = async ({ endpoint, data }: any) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${new Cookies().get(cookieName.token)}`,
       "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers":
+        "X-Requested-With, Access-Control-Allow-Origin, X-HTTP-Method-Override, Content-Type, Authentication, Accept",
+      "Access-Control-Allow-Credentials": "true",
     },
     mode: "cors",
   }).then((res) => {
