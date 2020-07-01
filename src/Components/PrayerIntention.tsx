@@ -4,11 +4,11 @@ import React from "react";
 import styled from "styled-components";
 import { EmailInput } from "../Util/Input";
 import useInput from "../Hooks/useInput";
-import sgMail from "@sendgrid/mail";
+// import sgMail from "@sendgrid/mail";
 
 import { useHistory } from "react-router-dom";
 // import "../.env";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 // import mail from "@sendgrid/mail";
 
 const Container = styled.div`
@@ -87,12 +87,12 @@ const SendButton = styled.button`
 `;
 
 export default () => {
-  dotenv.config();
+  // dotenv.config();
   const history = useHistory();
   const email = useInput("");
   const intention = useInput("");
 
-  const key: any = process.env.SENDGRID_API_KEY;
+  // const key: any = process.env.SENDGRID_API_KEY;
 
   function validateEmail(email: string) {
     const re =
@@ -114,27 +114,27 @@ export default () => {
     });
   };
 
-  const mailSend = (address: string, subject: string, content: string) => {
-    let date = Math.round(new Date("June 29, 2020 12:37:00").getTime() / 1000);
-    let tempDate = Math.round(new Date().getTime() / 1000);
-    const email = {
-      from: "CBLM@CBLM.com",
-      to: address,
-      subject: subject,
-      html: `기도 지향 내용: <p>${content}</p>`,
-      send_at: tempDate,
-    };
-    sgMail.setApiKey(key);
-    sgMail.send(email).then(
-      () => {},
-      (error) => {
-        console.log(error);
-        if (error.response) {
-          console.log(error.response.body);
-        }
-      },
-    );
-  };
+  // const mailSend = (address: string, subject: string, content: string) => {
+  //   let date = Math.round(new Date("June 29, 2020 12:37:00").getTime() / 1000);
+  //   let tempDate = Math.round(new Date().getTime() / 1000);
+  //   const email = {
+  //     from: "CBLM@CBLM.com",
+  //     to: address,
+  //     subject: subject,
+  //     html: `기도 지향 내용: <p>${content}</p>`,
+  //     send_at: tempDate,
+  //   };
+  //   sgMail.setApiKey(key);
+  //   sgMail.send(email).then(
+  //     () => {},
+  //     (error) => {
+  //       console.log(error);
+  //       if (error.response) {
+  //         console.log(error.response.body);
+  //       }
+  //     },
+  //   );
+  // };
 
   const handleClick = async (email: string, intention: string) => {
     // const data = { email, intention };
@@ -151,14 +151,13 @@ export default () => {
         },
       };
       console.log("outside fetchPOst");
-      // const res = await fetchPost(fetchOption);
+      const res = await fetchPost(fetchOption);
 
-      // if(res.ok){
-      //   console.log("ok!");
-
-      // }
-      mailSend(email, "26차 요한 연수 지향", intention);
-      history.push("/complete");
+      if (res.ok) {
+        console.log("ok!");
+      }
+      // mailSend(email, "26차 요한 연수 지향", intention);
+      // history.push("/complete");
       // await axios;
       // .post(`https://mailsender-api.vercel.app/sendmail`, {
       // .post(`http://localhost:4000/sendmail`, {
