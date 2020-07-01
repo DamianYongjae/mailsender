@@ -6,7 +6,7 @@ const cookieName = {
 };
 
 export const fetchPost = async ({ endpoint, data }: any) => {
-  return fetch(`https://mailsender-api.vercel.app/${endpoint}`, {
+  return fetch(`http://localhost:4000/${endpoint}`, {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
