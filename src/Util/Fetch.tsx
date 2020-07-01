@@ -17,7 +17,7 @@ export const fetchPost = async ({ endpoint, data }: any) => {
         "X-Requested-With, Access-Control-Allow-Origin, X-HTTP-Method-Override, Content-Type, Authentication, Accept",
       "Access-Control-Allow-Credentials": "true",
     },
-    mode: "no-cors",
+    // mode: "no-cors",
   }).then((res) => {
     return res;
   });
