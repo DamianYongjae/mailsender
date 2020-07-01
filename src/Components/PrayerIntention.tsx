@@ -136,7 +136,11 @@ export default () => {
   //   );
   // };
 
-  const handleClick = async (email: string, intention: string) => {
+  const handleClick = async (
+    email: string,
+    subject: string,
+    intention: string,
+  ) => {
     // const data = { email, intention };
     if (email === "" || intention === "") {
       alert("모든 항목을 입력해주세요");
@@ -147,6 +151,7 @@ export default () => {
         endpoint: `sendmail`,
         data: {
           email,
+          subject,
           intention,
         },
       };
@@ -224,7 +229,7 @@ export default () => {
       <ButtonContainer>
         <SendButton
           onClick={() => {
-            handleClick(email.value, intention.value);
+            handleClick(email.value, "26차 요한 연수 지향", intention.value);
           }}
         >
           전송
