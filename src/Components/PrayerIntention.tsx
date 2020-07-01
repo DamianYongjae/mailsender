@@ -109,7 +109,6 @@ export default () => {
           intention,
         },
       };
-      console.log("outside fetchPOst");
       const res: any = await fetchPost(fetchOption);
 
       if (res.ok) {

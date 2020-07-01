@@ -1,5 +1,11 @@
+import cookie from "cookie";
+
+const cookieName = {
+  token: "__session",
+  authorization: "Authorization",
+};
+
 export const fetchPost = async ({ endpoint, data }: any) => {
-  console.log("before fetch inside fetchpost");
   return fetch(`https://mailsender-api.vercel.app/${endpoint}`, {
     method: "POST",
     body: JSON.stringify(data),
@@ -11,6 +17,7 @@ export const fetchPost = async ({ endpoint, data }: any) => {
       "Access-Control-Allow-Headers":
         "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization",
       "Access-Control-Max-Age": "86400",
+      "Authorization": `Bearer ${new Cookies().get(cookieName.token)}`,
     },
     mode: "cors",
   }).then((res) => {
