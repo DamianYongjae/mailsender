@@ -7,7 +7,7 @@ import useInput from "../Hooks/useInput";
 import sgMail from "@sendgrid/mail";
 
 import { useHistory } from "react-router-dom";
-import "../.env";
+// import "../.env";
 import dotenv from "dotenv";
 // import mail from "@sendgrid/mail";
 
