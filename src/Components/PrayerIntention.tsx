@@ -1,15 +1,8 @@
 import React from "react";
-// import axios from "axios";
-
 import styled from "styled-components";
 import { EmailInput } from "../Util/Input";
 import useInput from "../Hooks/useInput";
-// import sgMail from "@sendgrid/mail";
-
 import { useHistory } from "react-router-dom";
-// import "../.env";
-// import dotenv from "dotenv";
-// import mail from "@sendgrid/mail";
 
 const Container = styled.div`
   margin: auto;
@@ -87,12 +80,9 @@ const SendButton = styled.button`
 `;
 
 export default () => {
-  // dotenv.config();
   const history = useHistory();
   const email = useInput("");
   const intention = useInput("");
-
-  // const key: any = process.env.SENDGRID_API_KEY;
 
   function validateEmail(email: string) {
     const re =
@@ -114,34 +104,11 @@ export default () => {
     });
   };
 
-  // const mailSend = (address: string, subject: string, content: string) => {
-  //   let date = Math.round(new Date("June 29, 2020 12:37:00").getTime() / 1000);
-  //   let tempDate = Math.round(new Date().getTime() / 1000);
-  //   const email = {
-  //     from: "CBLM@CBLM.com",
-  //     to: address,
-  //     subject: subject,
-  //     html: `기도 지향 내용: <p>${content}</p>`,
-  //     send_at: tempDate,
-  //   };
-  //   sgMail.setApiKey(key);
-  //   sgMail.send(email).then(
-  //     () => {},
-  //     (error) => {
-  //       console.log(error);
-  //       if (error.response) {
-  //         console.log(error.response.body);
-  //       }
-  //     },
-  //   );
-  // };
-
   const handleClick = async (
     email: string,
     subject: string,
     intention: string,
   ) => {
-    // const data = { email, intention };
     if (email === "" || intention === "") {
       alert("모든 항목을 입력해주세요");
     } else if (!validateEmail(email)) {
@@ -161,42 +128,9 @@ export default () => {
       if (res.ok) {
         console.log("ok!");
       }
-      // mailSend(email, "26차 요한 연수 지향", intention);
       history.push("/complete");
-      // await axios;
-      // .post(`https://mailsender-api.vercel.app/sendmail`, {
-      // .post(`http://localhost:4000/sendmail`, {
-      //   email,
-      //   intention,
-      // })
-      // .then((res) => {
-      //   history.push("/complete");
-      // })
-      // .catch((error) => {
-      //   console.log(error);
-      //   alert("something went wrong");
-      // });
-      // mailSend(email, "26차 요한연수 지향", intention);
     }
   };
-
-  // const handleSubmit = async (email: string, intention: string) => {
-  //   if (email === "" || intention === "") {
-  //     alert("모든 항목을 입력해주세요");
-  //   } else if (!validateEmail(email)) {
-  //     alert("이메일 주소를 정확히 입력해주세요.");
-  //   } else {
-  //     await fetch(`https://mailsender-api.vercel.app/sendmail`, {
-  //       method: "POST",
-  //       body: JSON.stringify({ email, intention }),
-  //       headers: {
-  //         "Content-Type": "application/json, application/x-www-form-urlencoded",
-  //       },
-  //       mode: "cors",
-  //     }).then((res) => console.log(res));
-  //     history.push("/complete");
-  //   }
-  // };
 
   return (
     <Container>
