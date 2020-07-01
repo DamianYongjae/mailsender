@@ -110,12 +110,12 @@ export default () => {
         },
       };
       console.log("outside fetchPOst");
-      const res = await fetchPost(fetchOption);
+      const res: any = await fetchPost(fetchOption);
 
       if (res.ok) {
         console.log("ok!");
+        return history.push("/complete");
       }
-      history.push("/complete");
     }
   };
 
