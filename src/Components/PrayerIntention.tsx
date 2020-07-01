@@ -92,6 +92,8 @@ export default () => {
   const email = useInput("");
   const intention = useInput("");
 
+  const key: any = process.env.SENDGRID_API_KEY;
+
   function validateEmail(email: string) {
     const re =
       /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -122,7 +124,7 @@ export default () => {
       html: `기도 지향 내용: <p>${content}</p>`,
       send_at: tempDate,
     };
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    sgMail.setApiKey(key);
     sgMail.send(email).then(
       () => {},
       (error) => {
