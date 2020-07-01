@@ -102,7 +102,7 @@ export default () => {
 
   const fetchPost = async ({ endpoint, data }: any) => {
     console.log("before fetch inside fetchpost");
-    return fetch(`http://localhost:4000/${endpoint}`, {
+    return fetch(`https://mailsender-api.vercel.app/${endpoint}`, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -162,7 +162,7 @@ export default () => {
         console.log("ok!");
       }
       // mailSend(email, "26차 요한 연수 지향", intention);
-      // history.push("/complete");
+      history.push("/complete");
       // await axios;
       // .post(`https://mailsender-api.vercel.app/sendmail`, {
       // .post(`http://localhost:4000/sendmail`, {
