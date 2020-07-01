@@ -1,4 +1,4 @@
-import cookie from "cookie";
+import { Cookies } from "react-cookie";
 
 const cookieName = {
   token: "__session",
@@ -17,7 +17,7 @@ export const fetchPost = async ({ endpoint, data }: any) => {
       "Access-Control-Allow-Headers":
         "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization",
       "Access-Control-Max-Age": "86400",
-      "Authorization": `Bearer ${new Cookies().get(cookieName.token)}`,
+      Authorization: `Bearer ${new Cookies().get(cookieName.token)}`,
     },
     mode: "cors",
   }).then((res) => {
