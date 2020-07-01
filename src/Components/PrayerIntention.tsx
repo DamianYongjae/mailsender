@@ -97,6 +97,12 @@ export default () => {
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods":
+          "GET, POST, PUT, PATCH, POST, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers":
+          "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization",
+        "Access-Control-Max-Age": "86400",
       },
       mode: "cors",
     }).then((res) => {
