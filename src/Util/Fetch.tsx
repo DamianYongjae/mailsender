@@ -12,6 +12,7 @@ export const fetchPost = async ({ endpoint, data }: any) => {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${new Cookies().get(cookieName.token)}`,
+      "Access-Control-Allow-Origin": "*",
     },
     mode: "cors",
   }).then((res) => {
