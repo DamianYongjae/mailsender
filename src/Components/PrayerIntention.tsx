@@ -7,8 +7,9 @@ import { fetchPost } from "../Util/Fetch";
 
 const Container = styled.div`
   margin: auto;
-  padding: 50px 100px;
+  padding: 50px;
   height: 100vh;
+  min-width: 700px;
   display: flex;
   justify-content: center;
   align-item: center;
@@ -19,6 +20,7 @@ const ContentContainer = styled.div`
   margin: auto;
   width: 100%;
   height: 100%;
+  min-width: 500px;
   display: flex;
   justify-content: center;
   flex-direction: column;
