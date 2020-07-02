@@ -7,8 +7,19 @@ import { fetchPost } from "../Util/Fetch";
 
 const Container = styled.div`
   margin: auto;
-  width: 60%;
-  height: 80vh;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-item: center;
+  flex-direction: column;
+  overflow: scroll;
+`;
+
+const ContentContainer = styled.div`
+  margin: auto;
+  width: 800px;
+  height: 700px;
   display: flex;
   justify-content: center;
   align-item: center;
@@ -22,6 +33,7 @@ const Title = styled.div`
   justify-content: center;
   align-item: center;
   padding: 40px;
+  font-size: 30px;
 `;
 
 const Instruction = styled.div`
@@ -75,9 +87,17 @@ const ButtonContainer = styled.div`
 `;
 
 const SendButton = styled.button`
-  width: 300px;
-  height: 40px;
+  width: 30%;
+  height: 30px;
   margin: auto;
+  background-color: #49aae2;
+  border: 1px solid grey;
+  border-radius: 4px;
+  &: hover {
+    background-color: #49aaff;
+    pointer: cursor;
+    color: white;
+  }
 `;
 
 export default () => {
@@ -86,15 +106,14 @@ export default () => {
   const intention = useInput("");
 
   function validateEmail(email: string) {
-    const re =
-      /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
 
   const handleClick = async (
     email: string,
     subject: string,
-    intention: string,
+    intention: string
   ) => {
     if (email === "" || intention === "") {
       alert("모든 항목을 입력해주세요");
@@ -120,41 +139,43 @@ export default () => {
 
   return (
     <Container>
-      <Title>연수 지향</Title>
-      <Instruction>
-        요한 연수에 임하면서 주님께 청하는 지향을 입력하세요. 전송버튼은 정해진 시간에 눌러주세요. 연수 후에 E-mail로 받으시게
-        되는데 못 받으신 분들은 Spam메일을 확인해 주세요.
-      </Instruction>
-      <EmailContainer>
-        <Label>Email:</Label>
-        <EmailInput
-          placeholder={"e-mail주소를 입력해주세요"}
-          required={true}
-          value={email.value}
-          onChange={email.onChange}
-          type="email"
-        >
-        </EmailInput>
-      </EmailContainer>
-      <IntentionContainer>
-        <Label>지향:</Label>
-        <IntentionInput
-          placeholder={"지향을 입력해주세요"}
-          required={true}
-          value={intention.value}
-          onChange={intention.onChange}
-        >
-        </IntentionInput>
-      </IntentionContainer>
-      <ButtonContainer>
-        <SendButton
-          onClick={() => {
-            handleClick(email.value, "26차 요한 연수 지향", intention.value);
-          }}
-        >
-          전송
-        </SendButton>
-      </ButtonContainer>
+      <ContentContainer>
+        <Title>연수 지향</Title>
+        <Instruction>
+          요한 연수에 임하면서 주님께 청하는 지향을 입력하세요. 전송버튼은
+          정해진 시간에 눌러주세요. 연수 후에 E-mail로 받으시게 되는데 못 받으신
+          분들은 Spam메일을 확인해 주세요. 받으신 E-mail은 답변이 불가하니
+          답장하지 마세요.
+        </Instruction>
+        <EmailContainer>
+          <Label>Email:</Label>
+          <EmailInput
+            placeholder={"e-mail주소를 입력해주세요"}
+            required={true}
+            value={email.value}
+            onChange={email.onChange}
+            type="email"
+          ></EmailInput>
+        </EmailContainer>
+        <IntentionContainer>
+          <Label>지향:</Label>
+          <IntentionInput
+            placeholder={"지향을 입력해주세요"}
+            required={true}
+            value={intention.value}
+            onChange={intention.onChange}
+          ></IntentionInput>
+        </IntentionContainer>
+        <ButtonContainer>
+          <SendButton
+            onClick={() => {
+              handleClick(email.value, "26차 요한 연수 지향", intention.value);
+            }}
+          >
+            전송
+          </SendButton>
+        </ButtonContainer>
+      </ContentContainer>
     </Container>
   );
 };
