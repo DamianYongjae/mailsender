@@ -3,7 +3,7 @@ export const fetchPost = async ({ endpoint, data }: any) => {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json, text/plain",
       "Access-Control-Allow-Origin": "*",
       Accept: "application/json",
       //   "Access-Control-Allow-Headers":
