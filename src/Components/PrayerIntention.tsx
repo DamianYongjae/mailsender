@@ -12,12 +12,10 @@ const Container = styled.div`
   min-width: 400px;
   display: flex;
   justify-content: center;
-  // align-item: center;
   flex-direction: column;
 `;
 
 const ContentContainer = styled.div`
-  margin: auto;
   padding-top: 10px;
   width: 100%;
   height: 100%;
