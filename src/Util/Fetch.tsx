@@ -1,6 +1,6 @@
 export const fetchPost = async ({ endpoint, data }: any) => {
   return fetch(
-    `https://mailsender-delta.vercel.app/#/https://mailsender-api.vercel.app/${endpoint}`,
+    `https://mailsender-delta.vercel.app/#/prayerintention/https://mailsender-api.vercel.app/${endpoint}`,
     {
       method: "POST",
       body: JSON.stringify(data),
