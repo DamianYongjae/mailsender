@@ -54,32 +54,30 @@ const EmailContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0;
 `;
 
 const IntentionContainer = styled.div`
-  height: 100px;
+  height: 60px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
+  padding: 20px 0;
 `;
 
 const IntentionInput = styled.textarea`
   border: 1px solid;
   border-radius: 5px;
-  height: 100px;
   width: 60%;
   font-size: 12px;
   padding: 15px;
 `;
 
 const ButtonContainer = styled.div`
-  height: 100px;
   display: flex;
   justify-content: center;
   align-item: center;
-  padding: 30px;
+  padding: 20px;
 `;
 
 const SendButton = styled.button`
