@@ -83,11 +83,11 @@ const SendButton = styled.button`
   height: 30px;
   margin: auto;
   background-color: #49aae2;
-  border: 1px solid grey;
+  border: none;
   border-radius: 4px;
   &: hover {
     background-color: #49aaff;
-    pointer: cursor;
+    cursor: pointer;
     color: white;
   }
 `;
