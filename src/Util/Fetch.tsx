@@ -1,9 +1,9 @@
 export const fetchPost = async ({ endpoint, data }: any) => {
-  return fetch(`https://mailsender-api.vercel.app/${endpoint}`, {
+  return fetch(`http://localhost:4000/${endpoint}`, {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
-      "Content-Type": "application/json, text/plain",
+      "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
       Accept: "application/json",
       //   "Access-Control-Allow-Headers":
