@@ -17,14 +17,11 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
   margin: auto;
-  width: 70%;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
-  align-item: center;
   flex-direction: column;
-  border: 1px solid blue;
-  border-radius: 4px;
 `;
 
 const Title = styled.div`
@@ -36,16 +33,14 @@ const Title = styled.div`
 `;
 
 const Instruction = styled.div`
-  display: flex;
-  justify-content: center;
-  align-item: center;
-  flex-direction: column;
+  margin: auto;
+  width: 60%;
   padding: 30px 100px;
 `;
 
 const Label = styled.div`
   display: flex;
-  align-item: center;
+  align-items: center;
   justify-content: center;
   height: 40px;
   margin-right: 30px;
@@ -55,7 +50,7 @@ const EmailContainer = styled.div`
   height: 40px;
   display: flex;
   justify-content: center;
-  align-item: center;
+  align-items: center;
   padding: 30px;
 `;
 
@@ -63,7 +58,7 @@ const IntentionContainer = styled.div`
   height: 100px;
   display: flex;
   justify-content: center;
-  align-item: center;
+  align-items: center;
   padding: 30px;
 `;
 
