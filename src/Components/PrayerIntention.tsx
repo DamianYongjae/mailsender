@@ -12,7 +12,7 @@ const Container = styled.div`
   min-width: 400px;
   display: flex;
   justify-content: center;
-  align-item: center;
+  // align-item: center;
   flex-direction: column;
 `;
 
