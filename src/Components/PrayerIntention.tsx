@@ -64,7 +64,7 @@ const IntentionContainer = styled.div`
 `;
 
 const IntentionInput = styled.textarea`
-  border: 1px solid;
+  border: 1px solid #49aaff;
   border-radius: 5px;
   width: 70%;
   font-size: 12px;
