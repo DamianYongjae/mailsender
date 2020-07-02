@@ -10,6 +10,7 @@ const Container = styled.div`
   padding: 10px;
   max-height: 900px;
   min-width: 350px;
+  max-width: 1000px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -17,7 +18,6 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
   padding-top: 10px;
-  width: 100%;
   height: 100%;
   min-width: 300px;
   display: flex;
@@ -66,9 +66,9 @@ const IntentionContainer = styled.div`
 const IntentionInput = styled.textarea`
   border: 1px solid;
   border-radius: 5px;
-  width: 60%;
+  width: 80%;
   font-size: 12px;
-  padding: 15px;
+  padding: 20px;
 `;
 
 const ButtonContainer = styled.div`
