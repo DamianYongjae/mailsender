@@ -9,7 +9,7 @@ const Container = styled.div`
   margin: auto;
   padding: 50px;
   height: 100vh;
-  min-width: 700px;
+  min-width: 500px;
   display: flex;
   justify-content: center;
   align-item: center;
@@ -20,7 +20,7 @@ const ContentContainer = styled.div`
   margin: auto;
   width: 100%;
   height: 100%;
-  min-width: 500px;
+  min-width: 400px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -30,14 +30,14 @@ const Title = styled.div`
   display: flex;
   justify-content: center;
   align-item: center;
-  padding: 40px;
+  padding: 30px;
   font-size: 30px;
 `;
 
 const Instruction = styled.div`
-  margin: auto;
-  width: 60%;
-  padding: 30px 100px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
 `;
 
 const Label = styled.div`
