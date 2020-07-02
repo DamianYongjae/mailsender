@@ -7,19 +7,18 @@ import { fetchPost } from "../Util/Fetch";
 
 const Container = styled.div`
   margin: auto;
-  width: 100%;
+  padding: 50px 100px;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-item: center;
   flex-direction: column;
-  overflow: scroll;
 `;
 
 const ContentContainer = styled.div`
   margin: auto;
-  width: 800px;
-  height: 700px;
+  width: 70%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-item: center;
@@ -41,7 +40,7 @@ const Instruction = styled.div`
   justify-content: center;
   align-item: center;
   flex-direction: column;
-  padding: 30px 50px;
+  padding: 30px 100px;
 `;
 
 const Label = styled.div`
@@ -78,7 +77,6 @@ const IntentionInput = styled.textarea`
 `;
 
 const ButtonContainer = styled.div`
-  width: 100%;
   height: 100px;
   display: flex;
   justify-content: center;
