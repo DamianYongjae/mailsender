@@ -9,7 +9,7 @@ const Container = styled.div`
   margin: auto;
   padding: 10px;
   max-height: 900px;
-  min-width: 400px;
+  min-width: 350px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -19,7 +19,7 @@ const ContentContainer = styled.div`
   padding-top: 10px;
   width: 100%;
   height: 100%;
-  min-width: 350px;
+  min-width: 300px;
   display: flex;
   justify-content: center;
   flex-direction: column;
