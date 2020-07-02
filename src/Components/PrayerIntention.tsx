@@ -8,7 +8,7 @@ import { fetchPost } from "../Util/Fetch";
 const Container = styled.div`
   margin: auto;
   padding: 10px;
-  height: 100vh;
+  height: 100%;
   min-width: 400px;
   display: flex;
   justify-content: center;
