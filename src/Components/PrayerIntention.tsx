@@ -7,7 +7,7 @@ import { fetchPost } from "../Util/Fetch";
 
 const Container = styled.div`
   margin: auto;
-  padding: 50px;
+  padding: 10px;
   height: 100vh;
   min-width: 400px;
   display: flex;
@@ -18,6 +18,7 @@ const Container = styled.div`
 
 const ContentContainer = styled.div`
   margin: auto;
+  padding-top: 10px;
   width: 100%;
   height: 100%;
   min-width: 350px;
@@ -30,12 +31,12 @@ const Title = styled.div`
   display: flex;
   justify-content: center;
   align-item: center;
-  padding: 30px;
+  padding: 20px;
   font-size: 30px;
 `;
 
 const Instruction = styled.div`
-  padding: 30px;
+  padding: 20px;
   display: flex;
   justify-content: center;
 `;
@@ -45,7 +46,7 @@ const Label = styled.div`
   align-items: center;
   justify-content: center;
   height: 40px;
-  margin-right: 30px;
+  margin-right: 10px;
 `;
 
 const EmailContainer = styled.div`
@@ -53,7 +54,7 @@ const EmailContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 20px;
 `;
 
 const IntentionContainer = styled.div`
@@ -61,7 +62,7 @@ const IntentionContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 20px;
 `;
 
 const IntentionInput = styled.textarea`

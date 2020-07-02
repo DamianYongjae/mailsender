@@ -6,7 +6,7 @@ const Container = styled.input`
   border-radius: 5px;
   height: 35px;
   width: 60%;
-  font-size: 12px;
+  font-size: 15px;
   padding: 0px 15px;
 `;
 
@@ -31,6 +31,5 @@ export const EmailInput = ({
     value={value}
     onChange={onChange}
     type={type}
-  >
-  </Container>
+  ></Container>
 );
