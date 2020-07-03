@@ -124,16 +124,6 @@ export default () => {
       if (result.ok) {
         return history.push("/complete");
       }
-      // .then((res) => res.json())
-      // .then((data) => {
-      //   JSON.stringify(data);
-      //   console.log("ok!");
-      //   return history.push("/complete");
-      // });
-
-      // if (res.ok) {
-      //   console.log("ok!");
-      // }
     }
   };
 
