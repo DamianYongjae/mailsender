@@ -6,9 +6,9 @@ export const fetchPost = async ({ endpoint, data }: any) => {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
       Accept: "application/json",
-      //   "Access-Control-Allow-Headers":
-      //     "X-Requested-With, Access-Control-Allow-Origin, X-HTTP-Method-Override, Content-Type, Authentication, Accept",
-      //   "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers":
+        "X-Requested-With, Access-Control-Allow-Origin, X-HTTP-Method-Override, Content-Type, Authentication, Accept",
+      "Access-Control-Allow-Credentials": "true",
     },
     mode: "cors",
   });
