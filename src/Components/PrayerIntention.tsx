@@ -120,9 +120,7 @@ export default () => {
           intention,
         },
       };
-      const res: any = await fetchPost(fetchOption)
-        .then((res) => res.json())
-        .then((data) => JSON.stringify(data));
+      const res: any = await fetchPost(fetchOption);
 
       if (res.ok) {
         console.log("ok!");
