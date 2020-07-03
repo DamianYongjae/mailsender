@@ -120,7 +120,10 @@ export default () => {
           intention,
         },
       };
-      await fetchPost(fetchOption);
+      const result = await fetchPost(fetchOption);
+      if (result.ok) {
+        return history.push("/complete");
+      }
       // .then((res) => res.json())
       // .then((data) => {
       //   JSON.stringify(data);
@@ -130,7 +133,6 @@ export default () => {
 
       // if (res.ok) {
       //   console.log("ok!");
-      return history.push("/complete");
       // }
     }
   };
