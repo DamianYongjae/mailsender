@@ -1,5 +1,0 @@
-{
-  "env": {
-    "SENDGRID_API_KEY": "@sendgrid-api-key-production-ug7o"
-  }
-}
