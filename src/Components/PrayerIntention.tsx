@@ -159,7 +159,11 @@ export default () => {
         <ButtonContainer>
           <SendButton
             onClick={() => {
-              handleClick(email.value, "26차 요한 연수 지향", intention.value);
+              handleClick(
+                email.value,
+                "26차 요한 연수 지향",
+                `기도지향 내용: <p>${intention.value}</p>`
+              );
             }}
           >
             전송
