@@ -133,9 +133,9 @@ export default () => {
         <Title>연수 지향</Title>
         <Instruction>
           요한 연수에 임하면서 주님께 청하는 지향을 입력하세요. 전송버튼은
-          정해진 시간에 눌러주세요. 연수 후에 E-mail로 받으시게 되는데 못 받으신
-          분들은 Spam메일을 확인해 주세요. 받으신 E-mail은 답변이 불가하니
-          답장하지 마세요.
+          정해진 시간에 눌러주세요. 제출하신 지향 내용은 어디에도 저장되지
+          않으며, 연수 후에 E-mail로 받으시게 되는데 못 받으신 분들은 Spam메일을
+          확인해 주세요. 받으신 E-mail은 답변이 불가하니 답장하지 마세요.
         </Instruction>
         <EmailContainer>
           <Label>Email:</Label>
