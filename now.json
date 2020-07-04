@@ -4,7 +4,7 @@
   },
   "headers": [
     {
-      "source": "/.*",
+      "source": "/Components/.*",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
