@@ -1,24 +1,5 @@
 {
   "env": {
     "SENDGRID_API_KEY": "@sendgrid-api-key-production-ug7o"
-  },
-  "headers": [
-    {
-      "source": "/",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "X-Requested-With, Access-Control-Allow-Origin, X-HTTP-Method-Override, Content-Type, Authentication, Accept"
-        },
-        {
-          "key": "Content-Type",
-          "value": "application/json"
-        }
-      ]
-    }
-  ]
+  }
 }
