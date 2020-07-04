@@ -10,5 +10,7 @@ export const fetchPost = async ({ endpoint, data }: any) => {
       // "Access-Control-Allow-Credentials": "true",
     },
     mode: "cors",
+  }).then((res) => {
+    return res;
   });
 };
