@@ -151,7 +151,7 @@ export default () => {
           ></EmailInput>
         </EmailContainer>
         <IntentionContainer>
-          <Label style={{ fontSize: 23 }}>지향 내용:</Label>
+          <Label style={{ fontSize: 23 }}>지향:</Label>
           <IntentionInput
             placeholder={"지향을 입력해주세요"}
             required={true}
