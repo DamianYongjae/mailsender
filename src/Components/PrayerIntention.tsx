@@ -39,7 +39,7 @@ const Instruction = styled.div`
   padding: 20px;
   display: flex;
   justify-content: center;
-  font-size: 30px;
+  font-size: 25px;
 `;
 
 const Label = styled.div`
@@ -141,7 +141,7 @@ export default () => {
           확인해 주세요. 받으신 E-mail은 답변이 불가능하니 답장하지 마세요.
         </Instruction>
         <EmailContainer>
-          <Label style={{ fontSize: 28 }}>Email:</Label>
+          <Label style={{ fontSize: 25 }}>Email:</Label>
           <EmailInput
             placeholder={"e-mail주소를 입력해주세요"}
             required={true}
