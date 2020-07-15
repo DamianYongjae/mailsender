@@ -4,6 +4,7 @@ import { EmailInput } from "../Util/Input";
 import useInput from "../Hooks/useInput";
 import { useHistory } from "react-router-dom";
 import { fetchPost } from "../Util/Fetch";
+import "../style.css";
 
 const Container = styled.div`
   margin: auto;
@@ -14,6 +15,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-family: "Nanum Pen Script", cursive;
 `;
 
 const ContentContainer = styled.div`
@@ -30,13 +32,14 @@ const Title = styled.div`
   justify-content: center;
   align-item: center;
   padding: 20px;
-  font-size: 30px;
+  font-size: 60px;
 `;
 
 const Instruction = styled.div`
   padding: 20px;
   display: flex;
   justify-content: center;
+  font-size: 30px;
 `;
 
 const Label = styled.div`
@@ -135,10 +138,10 @@ export default () => {
           요한 연수에 임하면서 주님께 청하는 지향을 입력하세요. 전송버튼은
           정해진 시간에 눌러주세요. 제출하신 지향 내용은 어디에도 저장되지
           않으며, 연수 후에 E-mail로 받으시게 되는데 못 받으신 분들은 Spam메일을
-          확인해 주세요. 받으신 E-mail은 답변이 불가하니 답장하지 마세요.
+          확인해 주세요. 받으신 E-mail은 답변이 불가능하니 답장하지 마세요.
         </Instruction>
         <EmailContainer>
-          <Label>Email:</Label>
+          <Label style={{ fontSize: 28 }}>Email:</Label>
           <EmailInput
             placeholder={"e-mail주소를 입력해주세요"}
             required={true}
@@ -148,7 +151,7 @@ export default () => {
           ></EmailInput>
         </EmailContainer>
         <IntentionContainer>
-          <Label>지향:</Label>
+          <Label style={{ fontSize: 23 }}>지향 내용:</Label>
           <IntentionInput
             placeholder={"지향을 입력해주세요"}
             required={true}
@@ -158,6 +161,7 @@ export default () => {
         </IntentionContainer>
         <ButtonContainer>
           <SendButton
+            style={{ fontFamily: '"Nanum Pen Script", cursive', fontSize: 22 }}
             onClick={() => {
               handleClick(
                 email.value,
