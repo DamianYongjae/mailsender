@@ -10,7 +10,6 @@ const Container = styled.div`
 const Contents = styled.div`
   margin: auto;
   height: 100%;
-
   background: url(https://prismagramdamian.s3.us-east-2.amazonaws.com/%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A3%E1%86%BC%E1%84%8F%E1%85%A1%E1%84%83%E1%85%B32.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -26,7 +25,6 @@ const Text = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  // font-size: 53px;
 `;
 
 export default () => {
