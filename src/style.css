@@ -42,7 +42,18 @@ body {
     display: none;
   }
 }
-@media screen and (max-width: 40em) {
+@media screen and (orientation: landscape) {
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .mobile-text {
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 60em) {
   .pc-contents {
     width: 100%;
   }
