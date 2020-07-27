@@ -42,7 +42,7 @@ body {
     display: none;
   }
 }
-@media screen and (max-width: 60em) {
+@media screen and (max-width: 40em) {
   .pc-contents {
     width: 100%;
   }
