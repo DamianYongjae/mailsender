@@ -79,6 +79,7 @@ const ButtonContainer = styled.div`
   justify-content: center;
   align-item: center;
   padding: 20px;
+  margin-top: 20px;
 `;
 
 const SendButton = styled.button`
