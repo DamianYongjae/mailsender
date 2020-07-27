@@ -6,4 +6,43 @@
 
 body {
   margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.mobile {
+  display: none;
+}
+
+.pc {
+  display: block;
+  width: 60%;
+}
+
+.pc-contents {
+  width: 80%;
+}
+
+.mobile-contenst {
+  width: 100%;
+}
+
+.mobile-text {
+  font-size: 30px;
+}
+.pc-text {
+  font-size: 53px;
+}
+@media screen and (max-width: 30em) {
+  .mobile {
+    display: block;
+    width: 100%;
+  }
+  .pc {
+    display: none;
+  }
+}
+@media screen and (max-width: 60em) {
+}
+@media screen and (min-width: 60em) {
 }
