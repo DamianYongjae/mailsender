@@ -5,7 +5,6 @@ import "../style.css";
 const Container = styled.div`
   margin: auto;
   width: 60%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,19 +15,19 @@ const Contents = styled.div`
   height: 1000px;
   width: 800px;
   background: url(https://prismagramdamian.s3.us-east-2.amazonaws.com/%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A3%E1%86%BC%E1%84%8F%E1%85%A1%E1%84%83%E1%85%B32.jpg);
-  background-size: cover;
+  background-size: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 const Text = styled.div`
-  padding-top: 180px;
+  padding-top: 150px;
   font-family: "Nanum Pen Script", cursive;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  font-size: 50px;
+  font-size: 53px;
 `;
 
 export default () => {
