@@ -43,6 +43,12 @@ body {
   }
 }
 @media screen and (max-width: 60em) {
+  .pc-contents {
+    width: 100%;
+  }
+  .pc-text {
+    font-size: 37px;
+  }
 }
 @media screen and (min-width: 60em) {
 }
