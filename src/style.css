@@ -43,17 +43,19 @@ body {
     display: none;
   }
 }
-@media screen and (orientation: landscape) {
+/* @media screen and (orientation: landscape) {
   .pc {
     display: none;
   }
   .mobile {
     display: block;
+    height: 100%;
+    width: 100%;
   }
   .mobile-text {
     font-size: 45px;
   }
-}
+} */
 @media screen and (max-width: 60em) {
   .pc-contents {
     width: 100%;
