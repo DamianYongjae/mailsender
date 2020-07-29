@@ -8,38 +8,39 @@ import "../style.css";
 
 const Container = styled.div`
   margin: auto;
-  padding: 10px;
-  max-height: 900px;
-  min-width: 350px;
-  max-width: 1000px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  height: 100vh;
   font-family: "Nanum Pen Script", cursive;
 `;
 
 const ContentContainer = styled.div`
-  padding-top: 10px;
+  margin: auto;
   height: 100%;
-  min-width: 300px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background: url(https://prismagramdamian.s3.us-east-2.amazonaws.com/%E1%84%8C%E1%85%B5%E1%84%92%E1%85%A3%E1%86%BC%E1%84%8F%E1%85%A1%E1%84%83%E1%85%B31.jpg);
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
 const Title = styled.div`
   display: flex;
   justify-content: center;
   align-item: center;
-  padding: 20px;
-  font-size: 60px;
+  padding: 10px;
+  font-size: 35px;
 `;
 
 const Instruction = styled.div`
   padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: 25px;
+  align-items: center;
+  font-size: 23px;
+  line-height: 1.2;
+  word-spacing: 5px;
 `;
 
 const Label = styled.div`
@@ -132,49 +133,109 @@ export default () => {
   };
 
   return (
-    <Container>
-      <ContentContainer>
-        <Title>연수 지향</Title>
-        <Instruction>
-          요한 연수에 임하면서 주님께 청하는 지향을 입력하세요. 전송버튼은
-          정해진 시간에 눌러주세요. 제출하신 지향 내용은 어디에도 저장되지
-          않으며, 연수 후에 E-mail로 받으시게 되는데 못 받으신 분들은 Spam메일을
-          확인해 주세요. 받으신 E-mail은 답변이 불가능하니 답장하지 마세요.
-        </Instruction>
-        <EmailContainer>
-          <Label style={{ fontSize: 25 }}>Email:</Label>
-          <EmailInput
-            placeholder={"e-mail주소를 입력해주세요"}
-            required={true}
-            value={email.value}
-            onChange={email.onChange}
-            type="email"
-          ></EmailInput>
-        </EmailContainer>
-        <IntentionContainer>
-          <Label style={{ fontSize: 23 }}>지향:</Label>
-          <IntentionInput
-            placeholder={"지향을 입력해주세요"}
-            required={true}
-            value={intention.value}
-            onChange={intention.onChange}
-          ></IntentionInput>
-        </IntentionContainer>
-        <ButtonContainer>
-          <SendButton
-            style={{ fontFamily: '"Nanum Pen Script", cursive', fontSize: 22 }}
-            onClick={() => {
-              handleClick(
-                email.value,
-                "26차 요한 연수 지향",
-                `기도지향 내용: <p>${intention.value}</p>`
-              );
-            }}
-          >
-            전송
-          </SendButton>
-        </ButtonContainer>
-      </ContentContainer>
-    </Container>
+    <>
+      <Container className="pc-intention">
+        <ContentContainer>
+          <Title>연수 지향</Title>
+          <Instruction>
+            <span>
+              요한 연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
+            </span>
+            <span>전송버튼은 정해진 시간에 눌러주세요. </span>
+            <span>제출하신 지향 내용은 어디에도 저장되지 않으며, </span>
+            <span>연수 끝난 후에 E-mail로 받으시게 됩니다. </span>
+            <span>못 받으신 분들은 Spam메일을 확인해 주세요. </span>
+            <span>받으신 E-mail은 답변이 불가능하니 답장하지 마세요.</span>
+          </Instruction>
+          <EmailContainer>
+            <Label style={{ fontSize: 25 }}>Email:</Label>
+            <EmailInput
+              placeholder={"e-mail주소를 입력해주세요"}
+              required={true}
+              value={email.value}
+              onChange={email.onChange}
+              type="email"
+            ></EmailInput>
+          </EmailContainer>
+          <IntentionContainer>
+            <Label style={{ fontSize: 23 }}>지향:</Label>
+            <IntentionInput
+              placeholder={"지향을 입력해주세요"}
+              required={true}
+              value={intention.value}
+              onChange={intention.onChange}
+            ></IntentionInput>
+          </IntentionContainer>
+          <ButtonContainer>
+            <SendButton
+              style={{
+                fontFamily: '"Nanum Pen Script", cursive',
+                fontSize: 22,
+              }}
+              onClick={() => {
+                handleClick(
+                  email.value,
+                  "26차 요한 연수 지향",
+                  `기도지향 내용: <p>${intention.value}</p>`
+                );
+              }}
+            >
+              전송
+            </SendButton>
+          </ButtonContainer>
+        </ContentContainer>
+      </Container>
+      <Container className="mobile-intention">
+        <ContentContainer>
+          <Title>연수 지향</Title>
+          <Instruction>
+            <span>
+              요한 연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
+            </span>
+            <span>전송버튼은 정해진 시간에 눌러주세요. </span>
+            <span>제출하신 지향 내용은 어디에도 저장되지 않으며, </span>
+            <span>연수 끝난 후에 E-mail로 받으시게 됩니다. </span>
+            <span>못 받으신 분들은 Spam메일을 확인해 주세요. </span>
+            <span>받으신 E-mail은 답변이 불가능하니 답장하지 마세요.</span>
+          </Instruction>
+          <EmailContainer>
+            <Label style={{ fontSize: 25 }}>Email:</Label>
+            <EmailInput
+              placeholder={"e-mail주소를 입력해주세요"}
+              required={true}
+              value={email.value}
+              onChange={email.onChange}
+              type="email"
+            ></EmailInput>
+          </EmailContainer>
+          <IntentionContainer>
+            <Label style={{ fontSize: 23 }}>지향:</Label>
+            <IntentionInput
+              placeholder={"지향을 입력해주세요"}
+              required={true}
+              value={intention.value}
+              onChange={intention.onChange}
+            ></IntentionInput>
+          </IntentionContainer>
+          <ButtonContainer>
+            <SendButton
+              style={{
+                fontFamily: '"Nanum Pen Script", cursive',
+                fontSize: 22,
+              }}
+              onClick={() => {
+                handleClick(
+                  email.value,
+                  "26차 요한 연수 지향",
+                  `기도지향 내용: <p>${intention.value}</p>`
+                );
+              }}
+            >
+              전송
+            </SendButton>
+          </ButtonContainer>
+        </ContentContainer>
+      </Container>
+    </>
   );
 };
