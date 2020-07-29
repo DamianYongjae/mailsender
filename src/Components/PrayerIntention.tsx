@@ -137,7 +137,7 @@ export default () => {
       <Container className="pc-intention">
         <ContentContainer>
           <Title>연수 지향</Title>
-          <Instruction>
+          <Instruction className="inst-text">
             <span>
               요한 연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
             </span>
@@ -188,7 +188,7 @@ export default () => {
       <Container className="mobile-intention">
         <ContentContainer>
           <Title>연수 지향</Title>
-          <Instruction>
+          <Instruction className="inst-text">
             <span>
               요한 연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
             </span>
