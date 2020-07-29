@@ -24,6 +24,8 @@ body {
 .pc-intention {
   display: block;
   width: 40%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .pc-contents {
@@ -81,10 +83,10 @@ body {
     font-size: 30px;
   }
   .pc-intention {
-    width: 100%;
+    width: 80%;
   }
   .inst-text {
-    font-size: 21px;
+    font-size: 20px;
   }
   .title-text {
     font-size: 32px;
