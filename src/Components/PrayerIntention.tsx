@@ -186,7 +186,7 @@ export default () => {
       <Container className="mobile-intention">
         <ContentContainer>
           <Title className="title-text">연수 지향</Title>
-          <Instruction className="inst-text">
+          <Instruction className="mobile-inst-text">
             <span>
               요한 연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
             </span>
