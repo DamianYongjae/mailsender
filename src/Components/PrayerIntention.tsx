@@ -66,11 +66,22 @@ const IntentionContainer = styled.div`
 `;
 
 const IntentionInput = styled.textarea`
-  border: 1px solid #49aaff;
-  border-radius: 5px;
-  width: 70%;
+  border: 1px solid rgb(167 184 199);
+  border-radius: 4px;
+  width: 74%;
   font-size: 12px;
-  padding: 15px;
+  padding: 10px;
+  &: focus {
+    outline: none;
+  }
+  &::placeholder {
+    font-family: "Nanum Pen Script", cursive;
+    font-size: 15px;
+  }
+  &::-ms-input-placeholder {
+    font-family: "Nanum Pen Script", cursive;
+    font-size: 15px;
+  }
 `;
 
 const ButtonContainer = styled.div`

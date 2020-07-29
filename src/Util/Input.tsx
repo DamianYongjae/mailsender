@@ -2,12 +2,23 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.input`
-  border: 1px solid #49aaff;
-  border-radius: 5px;
+  border: 1px solid rgb(167 184 199);
+  border-radius: 4px;
   height: 35px;
   width: 70%;
-  font-size: 15px;
+  font-size: 12px;
   padding: 0px 15px;
+  &: focus {
+    outline: none;
+  }
+  &::placeholder {
+    font-family: "Nanum Pen Script", cursive;
+    font-size: 15px;
+  }
+  &::-ms-input-placeholder {
+    font-family: "Nanum Pen Script", cursive;
+    font-size: 15px;
+  }
 `;
 
 type props = {
