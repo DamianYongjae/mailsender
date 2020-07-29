@@ -29,7 +29,6 @@ const Title = styled.div`
   justify-content: center;
   align-item: center;
   padding: 10px;
-  font-size: 35px;
 `;
 
 const Instruction = styled.div`
@@ -38,7 +37,6 @@ const Instruction = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 23px;
   line-height: 1.2;
   word-spacing: 5px;
 `;
@@ -136,7 +134,7 @@ export default () => {
     <>
       <Container className="pc-intention">
         <ContentContainer>
-          <Title>연수 지향</Title>
+          <Title className="title-text">연수 지향</Title>
           <Instruction className="inst-text">
             <span>
               요한 연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
@@ -187,7 +185,7 @@ export default () => {
       </Container>
       <Container className="mobile-intention">
         <ContentContainer>
-          <Title>연수 지향</Title>
+          <Title className="title-text">연수 지향</Title>
           <Instruction className="inst-text">
             <span>
               요한 연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}

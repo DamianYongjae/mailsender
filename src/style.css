@@ -43,7 +43,10 @@ body {
   font-size: 53px;
 }
 .inst-text {
-  font-size: 23px;
+  font-size: 20px;
+}
+.title-text {
+  font-size: 35px;
 }
 @media screen and (max-width: 30em) {
   .mobile {
@@ -66,6 +69,9 @@ body {
   .inst-text {
     font-size: 20px;
   }
+  .title-text {
+    font-size: 30px;
+  }
 }
 
 @media screen and (max-width: 60em) {
@@ -78,6 +84,12 @@ body {
   }
   .pc-intention {
     width: 60%;
+  }
+  .inst-text {
+    font-size: 21px;
+  }
+  .title-text {
+    font-size: 32px;
   }
 }
 @media screen and (min-width: 60em) {
