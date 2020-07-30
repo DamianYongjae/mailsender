@@ -96,13 +96,13 @@ const SendButton = styled.button`
   width: 30%;
   height: 30px;
   margin: auto;
-  background-color: #49aae2;
+  background-color: rgb(185 226 200);
   border: none;
   border-radius: 4px;
   &: hover {
-    background-color: #49aaff;
+    background-color: rgb(185 226 200);
     cursor: pointer;
-    color: white;
+    color: #4c5f61;
   }
 `;
 
