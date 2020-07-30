@@ -71,6 +71,7 @@ const IntentionInput = styled.textarea`
   width: 74%;
   font-size: 12px;
   padding: 10px;
+  resize: none;
   &: focus {
     outline: none;
   }
@@ -99,10 +100,19 @@ const SendButton = styled.button`
   background-color: rgb(185 226 200);
   border: none;
   border-radius: 4px;
+  color: #256b58;
+  transition: all 0.3s ease;
   &: hover {
-    background-color: rgb(185 226 200);
+    background-color: rgb(86 230 139);
     cursor: pointer;
-    color: #4c5f61;
+    color: #8d46c1;
+    opacity: 0.7;
+  }
+  &: active {
+    transform: translateX(1px) translateY(1px);
+  }
+  &: focus {
+    outline: none;
   }
 `;
 
@@ -150,7 +160,7 @@ export default () => {
             <span>
               요한 연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
             </span>
-            <span>전송버튼은 정해진 시간에 눌러주세요. </span>
+            <span>봉헌하기 버튼은 정해진 시간에 눌러주세요. </span>
             <span>제출하신 지향 내용은 어디에도 저장되지 않으며, </span>
             <span>연수 끝난 후에 E-mail로 받으시게 됩니다. </span>
             <span>못 받으신 분들은 Spam메일을 확인해 주세요. </span>
@@ -189,7 +199,7 @@ export default () => {
                 );
               }}
             >
-              전송
+              봉헌하기
             </SendButton>
           </ButtonContainer>
         </ContentContainer>
@@ -201,7 +211,7 @@ export default () => {
             <span>
               요한 연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
             </span>
-            <span>전송버튼은 정해진 시간에 눌러주세요. </span>
+            <span>봉헌하기 버튼은 정해진 시간에 눌러주세요. </span>
             <span>제출하신 지향 내용은 어디에도 저장되지 않으며, </span>
             <span>연수 끝난 후에 E-mail로 받으시게 됩니다. </span>
             <span>못 받으신 분들은 Spam메일을 확인해 주세요. </span>
@@ -240,7 +250,7 @@ export default () => {
                 );
               }}
             >
-              전송
+              봉헌하기
             </SendButton>
           </ButtonContainer>
         </ContentContainer>
