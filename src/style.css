@@ -73,10 +73,7 @@ body {
     font-size: 30px;
   }
 }
-@media only screen (orientation: landscape) {
-  body {
-    flex-direction: row;
-  }
+@media only screen and (orientation: landscape) {
   .pc-intention {
     display: none;
   }
