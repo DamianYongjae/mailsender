@@ -73,7 +73,7 @@ body {
     font-size: 30px;
   }
 }
-@media only screen and (orientation: landscape) {
+@media only screen and (orientation: landscape), and (max-width: 60em) {
   .pc-intention {
     display: none;
   }
