@@ -73,6 +73,20 @@ body {
     font-size: 30px;
   }
 }
+@media (orientation: landscape) {
+  body {
+    flex-direction: row;
+  }
+  .pc-intention {
+    display: none;
+  }
+  .mobile-intention {
+    display: block;
+    width: 100%;
+    height: 200%;
+    padding: 0;
+  }
+}
 
 @media screen and (max-width: 60em) {
   .pc-contents {
