@@ -43,7 +43,7 @@ body {
   font-size: 53px;
 }
 .inst-text {
-  font-size: 26px;
+  font-size: 22px;
 }
 .title-text {
   font-size: 35px;
@@ -73,7 +73,7 @@ body {
     font-size: 30px;
   }
 }
-@media screen and (orientation: landscape) {
+/* @media all and (orientation: landscape) {
   .pc-intention {
     display: none;
   }
@@ -83,7 +83,7 @@ body {
     height: 200vh;
     padding: 0;
   }
-}
+} */
 
 @media screen and (max-width: 60em) {
   .pc-contents {
