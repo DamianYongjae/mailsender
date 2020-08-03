@@ -35,7 +35,7 @@ export default () => {
           <Text className="pc pc-text">
             <span>제출하셨습니다.</span>
             <span> 연수가 끝난 후에</span>
-            <span>Email로 받으실 수 있습니다.</span>
+            <span>E-mail로 받으실 수 있습니다.</span>
             <br></br>
             <span>창을 닫아주세요.</span>
           </Text>
@@ -46,7 +46,7 @@ export default () => {
           <Text className="mobile-text mobile">
             <span>제출하셨습니다.</span>
             <span> 연수가 끝난 후에</span>
-            <span>Email로 받으실 수 있습니다.</span>
+            <span>E-mail로 받으실 수 있습니다.</span>
             <br></br>
             <span>창을 닫아주세요.</span>
           </Text>
