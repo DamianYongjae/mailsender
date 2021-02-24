@@ -158,7 +158,7 @@ export default () => {
           <Title className="title-text">연수 지향</Title>
           <Instruction className="inst-text">
             <span>
-              요한 연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
+              연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
             </span>
             <span>봉헌하기 버튼은 정해진 시간에 눌러주세요. </span>
             <span>제출하신 지향 내용은 어디에도 저장되지 않으며, </span>
@@ -168,7 +168,7 @@ export default () => {
           </Instruction>
           <Instruction className="inst-horizontal">
             <span>
-              요한 연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
+              연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
             </span>
             <span>봉헌하기 버튼은 정해진 시간에 눌러주세요. </span>
             <span>
@@ -208,7 +208,7 @@ export default () => {
               onClick={() => {
                 handleClick(
                   email.value,
-                  "26차 요한 연수 지향",
+                  "27차 마르코 연수 지향",
                   `기도지향 내용: <p>${intention.value}</p>`
                 );
               }}
@@ -223,7 +223,7 @@ export default () => {
           <Title className="title-text">연수 지향</Title>
           <Instruction className="mobile-inst-text">
             <span>
-              요한 연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
+              연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
             </span>
             <span>봉헌하기 버튼은 정해진 시간에 눌러주세요. </span>
             <span>제출하신 지향 내용은 어디에도 저장되지 않으며, </span>
@@ -259,7 +259,7 @@ export default () => {
               onClick={() => {
                 handleClick(
                   email.value,
-                  "26차 요한 연수 지향",
+                  "27차 마르코 연수 지향",
                   `기도지향 내용: <p>${intention.value}</p>`
                 );
               }}

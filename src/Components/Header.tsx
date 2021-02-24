@@ -29,7 +29,7 @@ const Subtitle = styled.div`
 export default () => {
   return (
     <Header>
-      <Title>제 26차 요한 비대면 연수</Title>
+      <Title>제 27차 마르코 비대면 연수</Title>
       <Subtitle>말씀이 사람이 되시어 우리 가운데 사셨다. (요한 1:14)</Subtitle>
     </Header>
   );
