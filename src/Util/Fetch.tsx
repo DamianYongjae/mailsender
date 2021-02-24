@@ -5,6 +5,7 @@ export const fetchPost = async ({ endpoint, data }: any) => {
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "true",
     },
     mode: "cors",
   });
