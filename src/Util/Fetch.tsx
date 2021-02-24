@@ -6,6 +6,6 @@ export const fetchPost = async ({ endpoint, data }: any) => {
     headers: {
       "Content-Type": "application/json",
     },
-    mode: "cors",
+    mode: "no-cors",
   });
 };
