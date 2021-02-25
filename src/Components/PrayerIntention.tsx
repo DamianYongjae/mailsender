@@ -161,8 +161,8 @@ export default () => {
               연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
             </span>
             <span>봉헌하기 버튼은 정해진 시간에 눌러주세요. </span>
-            <span>제출하신 지향 내용은 어디에도 저장되지 않으며, </span>
-            <span>연수 끝난 후에 E-mail로 받으시게 됩니다. </span>
+            <span>제출하신 지향 내용은 연수 끝난 후에 </span>
+            <span>E-mail로 받으시게 됩니다. </span>
             <span>못 받으신 분들은 Spam mail을 확인해 주세요. </span>
             <span>받으신 E-mail은 답변이 불가능하니 답장하지 마세요.</span>
           </Instruction>
@@ -172,7 +172,7 @@ export default () => {
             </span>
             <span>봉헌하기 버튼은 정해진 시간에 눌러주세요. </span>
             <span>
-              제출하신 지향 내용은 어디에도 저장되지 않으며, 연수 끝난 후에
+              제출하신 지향 내용은 연수 끝난 후에
               E-mail로 받으시게 됩니다.{" "}
             </span>
             <span>
@@ -226,8 +226,8 @@ export default () => {
               연수에 임하면서 주님께 청하는 지향을 입력해주세요.{" "}
             </span>
             <span>봉헌하기 버튼은 정해진 시간에 눌러주세요. </span>
-            <span>제출하신 지향 내용은 어디에도 저장되지 않으며, </span>
-            <span>연수 끝난 후에 E-mail로 받으시게 됩니다. </span>
+            <span>제출하신 지향 내용은 연수 끝난 후에  </span>
+            <span>E-mail로 받으시게 됩니다. </span>
             <span>못 받으신 분들은 Spam mail을 확인해 주세요. </span>
             <span>받으신 E-mail은 답변이 불가능하니 답장하지 마세요.</span>
           </Instruction>
